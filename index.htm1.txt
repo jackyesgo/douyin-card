@@ -5,56 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>抖音伪装跳转卡片</title>
 <style>
-  body {
-    margin: 0; padding: 0; background: #fff; font-family: "微软雅黑", sans-serif;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    height: 100vh; text-align: center; color: #333;
+  /* 页面整体样式 */
+  body, html {
+    margin: 0; padding: 0; height: 100%; background: #fff; font-family: "微软雅黑", sans-serif;
+    display: flex; align-items: center; justify-content: center;
   }
-  img {
-    max-width: 120px; border-radius: 16px; margin-bottom: 20px;
+  .card {
+    width: 320px; /* 抖音私信卡片宽度适配 */
+    border: 1px solid #ddd; border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 24px 20px; text-align: center; cursor: pointer;
+    transition: box-shadow 0.3s ease;
   }
-  h1 {
-    font-size: 22px; margin-bottom: 10px;
+  .card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   }
-  p {
-    font-size: 16px; margin-bottom: 30px; color: #666;
+  .card img {
+    width: 120px; height: 120px; object-fit: cover; border-radius: 20px; margin-bottom: 18px;
   }
-  a.button {
-    display: inline-block;
-    background: #19a1ff;
-    color: white;
-    padding: 12px 40px;
-    border-radius: 25px;
-    font-size: 18px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(25,161,255,0.6);
-    transition: background 0.3s ease;
+  .card h1 {
+    font-size: 24px; margin: 0 0 12px 0; color: #222;
   }
-  a.button:hover {
+  .card p {
+    font-size: 16px; color: #666; margin: 0 0 24px 0;
+  }
+  .card .btn {
+    display: inline-block; background: #19a1ff; color: white;
+    padding: 12px 40px; border-radius: 25px; font-size: 18px; text-decoration: none;
+    user-select: none;
+  }
+  .card .btn:active {
     background: #0e83d9;
   }
 </style>
 </head>
 <body>
 
-<!-- 以下变量部分，方便你替换 -->
-<img id="cardImage" src="http://m.qpic.cn/psc?/V52SnOzo0BswJS4UUoPL3liFQc0SHSRl/LiySpxowE0yeWXwBdXN*SdM5OX76uaG6sej4bz0cyZ6PFZ6l7YINs.yz.Rl*cwufj6pd1i7001rm2zXXlsBL8q6LQgk75w1ZBMGIPuTjZTA!/b&bo=5wDaAOcA2gABByA!&rf=viewer_4" alt="卡片图片" />
-<h1 id="cardTitle">立即点击</h1>
-<p id="cardDesc">点击链接找到我</p>
-<a id="cardLink" class="button" href="https://work.weixin.qq.com/ca/cawcdebb1128a7bc65" target="_blank" rel="noopener noreferrer">点击查看</a>
+<div class="card" id="jumpCard" tabindex="0" role="button" aria-pressed="false" aria-label="跳转卡片">
+  <img id="cardImg" src="https://cdn.jsdelivr.net/gh/jackwangs-projects-01/static/blue-icon.png" alt="卡片图片" />
+  <h1 id="cardTitle">立即点击</h1>
+  <p id="cardDesc">点击链接找到我</p>
+  <div class="btn" id="cardBtn">点击查看</div>
+</div>
 
 <script>
-  // 如果你想用JS替换内容，可以用这里改变量
-  // 也可以直接修改上面标签内内容和属性
+  // 这里是自定义变量区，方便替换
+  const imageURL = "https://cdn.jsdelivr.net/gh/jackwangs-projects-01/static/blue-icon.png";
+  const titleText = "立即点击";
+  const descText = "点击链接找到我";
+  const linkURL = "https://work.weixin.qq.com/ca/cawcdebb1128a7bc65";
 
-  // 示例：动态修改内容
-  /*
-  document.getElementById('cardImage').src = "https://new-image-url.com/pic.jpg";
-  document.getElementById('cardTitle').textContent = "新的标题";
-  document.getElementById('cardDesc').textContent = "新的描述";
-  document.getElementById('cardLink').href = "https://new-link.com";
-  document.getElementById('cardLink').textContent = "立即访问";
-  */
+  // 赋值页面元素
+  const cardImg = document.getElementById("cardImg");
+  const cardTitle = document.getElementById("cardTitle");
+  const cardDesc = document.getElementById("cardDesc");
+  const cardBtn = document.getElementById("cardBtn");
+  const jumpCard = document.getElementById("jumpCard");
+
+  cardImg.src = imageURL;
+  cardTitle.textContent = titleText;
+  cardDesc.textContent = descText;
+
+  // 点击卡片或按钮都跳转
+  function jump() {
+    window.location.href = linkURL;
+  }
+  jumpCard.addEventListener("click", jump);
+  cardBtn.addEventListener("click", jump);
+  
+  // 支持键盘回车跳转（无障碍）
+  jumpCard.addEventListener("keydown", (e) => {
+    if(e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      jump();
+    }
+  });
 </script>
 
 </body>
