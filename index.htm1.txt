@@ -3,77 +3,59 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>抖音私信卡片</title>
+<title>抖音伪装跳转卡片</title>
 <style>
   body {
-    background: #f5f5f7;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin: 0; padding: 0; background: #fff; font-family: "微软雅黑", sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100vh; text-align: center; color: #333;
   }
-  .card {
-    background: #fff;
-    width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
-    padding: 16px;
+  img {
+    max-width: 120px; border-radius: 16px; margin-bottom: 20px;
   }
-  .header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
+  h1 {
+    font-size: 22px; margin-bottom: 10px;
   }
-  .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    margin-right: 12px;
-    object-fit: cover;
+  p {
+    font-size: 16px; margin-bottom: 30px; color: #666;
   }
-  .nickname {
-    font-weight: 600;
-    font-size: 16px;
-    color: #121212;
-  }
-  .message {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.4;
-    margin-bottom: 20px;
-  }
-  .btn {
-    display: block;
-    width: 100%;
-    background: #fe2c55;
-    color: #fff;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 12px 0;
-    border-radius: 24px;
-    text-align: center;
+  a.button {
+    display: inline-block;
+    background: #19a1ff;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: 18px;
     text-decoration: none;
-    user-select: none;
+    box-shadow: 0 4px 10px rgba(25,161,255,0.6);
+    transition: background 0.3s ease;
   }
-  .btn:active {
-    background: #c40032;
+  a.button:hover {
+    background: #0e83d9;
   }
 </style>
 </head>
 <body>
-  <div class="card">
-    <div class="header">
-      <img class="avatar" src="https://p3-dy.byteimg.com/aweme/100x100/2cd7001b186741d07c5c.jpeg" alt="头像" />
-      <div class="nickname">抖音官方助手</div>
-    </div>
-    <div class="message">
-      你好！点击下方按钮，立即添加微信，获取专属优惠和最新活动信息！
-    </div>
-    <a class="btn" href="https://work.weixin.qq.com/ca/cawcdebb1128a7bc65" target="_blank" rel="noopener noreferrer">
-      立即添加微信
-    </a>
-  </div>
+
+<!-- 以下变量部分，方便你替换 -->
+<img id="cardImage" src="http://m.qpic.cn/psc?/V52SnOzo0BswJS4UUoPL3liFQc0SHSRl/LiySpxowE0yeWXwBdXN*SdM5OX76uaG6sej4bz0cyZ6PFZ6l7YINs.yz.Rl*cwufj6pd1i7001rm2zXXlsBL8q6LQgk75w1ZBMGIPuTjZTA!/b&bo=5wDaAOcA2gABByA!&rf=viewer_4" alt="卡片图片" />
+<h1 id="cardTitle">立即点击</h1>
+<p id="cardDesc">点击链接找到我</p>
+<a id="cardLink" class="button" href="https://work.weixin.qq.com/ca/cawcdebb1128a7bc65" target="_blank" rel="noopener noreferrer">点击查看</a>
+
+<script>
+  // 如果你想用JS替换内容，可以用这里改变量
+  // 也可以直接修改上面标签内内容和属性
+
+  // 示例：动态修改内容
+  /*
+  document.getElementById('cardImage').src = "https://new-image-url.com/pic.jpg";
+  document.getElementById('cardTitle').textContent = "新的标题";
+  document.getElementById('cardDesc').textContent = "新的描述";
+  document.getElementById('cardLink').href = "https://new-link.com";
+  document.getElementById('cardLink').textContent = "立即访问";
+  */
+</script>
+
 </body>
 </html>
