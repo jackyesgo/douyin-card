@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>抖音私信卡片</title>
+<style>
+  body {
+    background: #f5f5f7;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .card {
+    background: #fff;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+    padding: 16px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+  }
+  .nickname {
+    font-weight: 600;
+    font-size: 16px;
+    color: #121212;
+  }
+  .message {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    background: #fe2c55;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 24px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+  }
+  .btn:active {
+    background: #c40032;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img class="avatar" src="https://p3-dy.byteimg.com/aweme/100x100/2cd7001b186741d07c5c.jpeg" alt="头像" />
+      <div class="nickname">抖音官方助手</div>
+    </div>
+    <div class="message">
+      你好！点击下方按钮，立即添加微信，获取专属优惠和最新活动信息！
+    </div>
+    <a class="btn" href="https://work.weixin.qq.com/ca/cawcdebb1128a7bc65" target="_blank" rel="noopener noreferrer">
+      立即添加微信
+    </a>
+  </div>
+</body>
+</html>
