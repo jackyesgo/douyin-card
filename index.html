@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>腾讯风格跳转卡片</title>
+<style>
+body,html{margin:0;padding:0;background:#fff;font-family:"微软雅黑",sans-serif;display:flex;align-items:center;justify-content:center;height:100%;}
+.card{width:320px;display:flex;align-items:center;border:1px solid #ddd;border-radius:12px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);cursor:pointer;transition:box-shadow 0.2s;}
+.card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.card img{width:64px;height:64px;border-radius:8px;object-fit:cover;margin-right:12px;}
+.card-content{flex:1;}
+.card-title{font-size:16px;color:#222;margin:0 0 6px 0;font-weight:bold;}
+.card-desc{font-size:13px;color:#666;margin:0;}
+.card-btn{display:inline-block;margin-top:8px;background:#19a1ff;color:white;padding:4px 10px;border-radius:4px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="card" onclick="jump()">
+  <img src="https://cdn.jsdelivr.net/gh/jackwangs-projects-01/static/blue-icon.png" alt="图标">
+  <div class="card-content">
+    <div class="card-title">立即点击</div>
+    <div class="card-desc">点击跳转到我的微信</div>
+    <div class="card-btn">点击查看</div>
+  </div>
+</div>
+
+<script>
+const linkURL = "https://work.weixin.qq.com/ca/cawcdebb1128a7bc65";
+function jump(){
+  window.location.href = linkURL;
+}
+</script>
+
+</body>
+</html>
